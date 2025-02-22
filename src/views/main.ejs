@@ -1,0 +1,45 @@
+<% if (!session) { %>
+<main>
+  <!-- here in main section we have two divs one is for description and another is for the button -->
+  <div class="main">
+    <h1>A comprehensive platform for reliable</h1>
+    <p class="text">Job opportunities and internships</p>
+    <p class="text">Get Discovered and Get Hired.</p>
+    <div class="btn">
+      <button class="seeker"><a href="/jobPosting">I'm A Job Seeker</a></button>
+      <button class="recruiter">
+        <a href="/registrationForm">I'm A Recruiter</a>
+      </button>
+    </div>
+  </div>
+</main>
+<% }if (session) { %>
+  <!-- here is the div for last visit by recruiter  -->
+  
+<div class="card" style="width: 23rem ;  ">
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+    <p class="card-text" style="color: rgb(243, 8, 8); font-size: xx-large;"  >
+     <strong>Welcome !</strong> <Strong><em><%= session.name.toUpperCase() %></em></Strong>
+    </p>
+  <p class="card-text" style="color: rgb(64, 235, 12); font-size: x-large;"><strong>Your email </strong><strong><em><%= session.email %></em></strong></p>
+  <p id="numberOfPost"><strong>   You have posted </strong> 
+    <% if (allJobs.length === 1) { %> 
+       <strong> <em><%= allJobs.length %></em> job.</strong>
+    <% } else { %> 
+     <strong>  <em> <%= allJobs.length %></em> jobs.</strong>
+    <% } %>
+</p>
+<p style="color:blue; font-size: large;"><strong>Designation(s):</strong>
+  <% allJobs.forEach((job, index) => { %>
+    <strong><em>    <%= job.designation %><%= index < allJobs.length - 1 ? ', ' : '' %>
+    </em></strong>
+  <% }); %>
+</p>
+</strong></p>
+   </div>
+   <div class="alert alert-info" role="alert">
+    Last Visited: <%= lastVisit %>
+   </div>
+</div>
+<% } %>

@@ -1,0 +1,13 @@
+<div class="alert alert-success d-flex align-items-center" role="alert">
+    <svg class="bi flex-shrink-0 me-5" role="img" aria-label="Success:">
+      <use xlink:href="#check-circle-fill" />
+    </svg>
+    <% jobSeekers.forEach(jobSeeker => { %>
+      <% if (jobSeeker.alreadyApplied) { %>
+          <div>Already Applied!</div>
+      <% } else if (!jobSeeker.alreadyApplied) { %>
+          <div>You have Successfully Applied !</div>
+      <% } %>
+  <% }) %>
+  
+  </div>

@@ -1,0 +1,33 @@
+      <div class="registrationForm">
+        <% if (typeof errors !== "undefined" && errors.length > 0) { %>
+          <div class="alert alert-warning" role="alert">
+            <ul>
+              <% errors.forEach((error) => { %>
+              <li><%= error.msg %></li>
+              <% }) %>
+            </ul>
+          </div>
+          <% } %>
+      <form action="/applyJob" method="POST">
+        <h2 id="Registration">Apply For Job</h2>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="name">Name</span>
+            <input type="text" class="form-control" name="name" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" maxlength="15" required>
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="email">Email</span>
+            <input type="email" class="form-control" name="email"   aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" >
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" >Contact Number</span>
+            <input type="text" class="form-control" id="contact" 
+            placeholder="+91-" value="+91-"  name="contact"
+            oninput="fixCountryCode(this)" maxlength="14">
+               </div>
+            <div class="mb-3">
+                 <input class="form-control" type="file" id="formFile" name="resume" accept=".pdf" required>
+              </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+           
+        </div>

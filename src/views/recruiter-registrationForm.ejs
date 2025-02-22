@@ -1,0 +1,69 @@
+<div class="form-div">
+  <h2 class="registration-heading">RegistrationForm</h2>
+  <% if (typeof errors !== "undefined" && errors.length > 0) { %>
+  <div class="alert alert-warning" role="alert">
+    <ul>
+      <% errors.forEach((error) => { %>
+      <li><%= error.msg %></li>
+      <% }) %>
+    </ul>
+  </div>
+  <% } %>
+
+  <form action="/registrationForm" method="POST" class="registration-form">
+    <div class="mb-3">
+      <!-- <span class="input-group-text" id="inputGroup-sizing-default">Default</span> -->
+      <label for="name" class="form-label">Name</label>
+      <input
+        id="name"
+        type="text"
+        name="name"
+        class="form-control"
+        aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-default"
+        autocomplete="off"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input
+        type="email"
+        name="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        required
+      />
+      <div id="emailHelp" class="form-text">
+        We'll never share your email with anyone else.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        name="password"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label"
+        >Confirm Password</label
+      >
+      <input
+        type="Password"
+        class="form-control"
+        id="exampleInputPassword1"
+        name="confirmPassword"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <p id="isAccount">Already have an account ?</p>
+  <!-- this is for login form once i click on login button in registration-form is redirected to login form -->
+  <button class="login"><a href="/login1">Login</a></button>
+</div>

@@ -1,0 +1,87 @@
+<h2 class="jobposting-header">Job Details</h2>
+
+<% if (!job) { %>
+  <p>Job not found.</p>
+<% } else { %>
+  <!-- Single Job Card -->
+  <div class="job-details-container">
+    <div class="job-description"> 
+      <div class="hiringStatus">
+        <% if(!user) {%>
+        <a href="/jobPosting"><i class="fa-solid fa-backward fa-lg" style="color: #FFD43B;"></i></a>
+   <% } %>
+        <h3>Actively hiring</h3>
+        <i class="fa-solid fa-chart-line" style="color: #63e6be"></i>
+
+        <!--  Only Recruiter Can See Edit & Delete Buttons -->
+        <% if (session && session.role === "recruiter") { %>
+          <a href="/updateJob/<%= job.id %>" onclick="return confirm('Are you sure you want to edit this job?')">
+            <i class="fa-solid fa-pen-to-square" style="color: #5dec40;"></i>
+          </a>
+          <a href="/deleteJob/<%= job.id %>" onclick="return confirm('Are you sure you want to delete this job?');">
+            <i class="fa-solid fa-trash" style="color: #f81616;"></i>
+          </a>
+        <% } %>
+
+      </div>
+      <hr />
+      <div class="company-name">
+        <h3><%= job.companyName %></h3>
+        <p id="tech"><%= job.role %>: <%= job.designation %></p>
+      </div>
+      <hr />
+      <div class="location">
+        <i class="fa-solid fa-location-dot" style="color: #63e6be"></i>
+        <p><%= job.location %></p>
+      </div>
+      <div class="currency">
+        <i class="fa-solid fa-indian-rupee-sign" style="color: #63e6be"></i>
+        <p><%= job.salary %> LPA</p>
+      </div>
+      <div class="totalopening">
+        <i class="fa-solid fa-user" style="color: #63E6BE;"></i>
+        <p>Openings: <%= job.jobopening %></p>
+      </div>
+      <div class="date">
+        <i class="fa-solid fa-calendar-minus" style="color: #63E6BE;"></i>
+        <p><%= job.dob %></p>
+      </div>
+      <div class="applicants">
+        <i class="fa-solid fa-users" style="color: #FFD43B;"></i>
+        <% if (user ) { %>
+          <a href="/viewApplicants/<%= job.id %>">
+              <p>Applicants: <%= count.length %></p>
+          </a>
+      <% } else { %>
+          <p>Applicants: <%= count.length %></p>
+      <% } %>
+            
+      </div>
+      <div class="skills">
+        <div class="skillsType">
+          <i class="fa-solid fa-gears" style="color: #63d7e6"></i>
+          <p>Skills Required:</p>
+        </div>
+        <div class="requiredSkills">
+          <% if (job.skills && job.skills.length > 0) { %>
+            <% job.skills.forEach(skill => { %>
+              <div class="skillName"><%= skill %></div>
+            <% }); %>
+          <% } else { %>
+            <div class="skillName">No skills required</div>
+          <% } %>
+        </div>
+      </div>
+      <div class="details">
+        <% if(user) {%>
+        <button type="button" id="details"><a href="/jobPosting">Back</a></button>
+        <% } else{ %>
+          <button type="button" id="jobSeekerRegistration">
+            <a href="/jobSeekerRegistration">Apply for Job</a>
+          </button>
+          
+                    <% } %>
+      </div>
+    </div>
+  </div>
+<% } %>

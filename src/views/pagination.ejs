@@ -1,0 +1,16 @@
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <% if (page > 1) { %>
+      <li class="page-item"><a class="page-link" href="<%= pageUrl %>?page=<%= page - 1 %>">&laquo; Previous</a></li>
+      <% } %>
+      <% for (let i = 1; i <= totalPages; i++) { %>
+
+      <li class="page-item <%= i === page ? 'active' : '' %>"><a class="page-link" href="<%= pageUrl %>?page=<%= i %>"><%= i %></a></li>
+      <% } %>
+      <% if (page < totalPages) { %>
+
+      <li class="page-item"><a class="page-link" href="<%= pageUrl %>?page=<%= page + 1 %>">Next &raquo;</a></li>
+      <% } %>   
+    </ul>
+  </nav>

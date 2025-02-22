@@ -1,0 +1,30 @@
+<div class="container mt-4">
+    <h2 class="text-center" style="color: blueviolet;">Applicants for this Job</h2>
+
+    <% if (allApplicants.length == 0) { %>
+        <p class="text-center text-danger">No applicants yet.</p>
+    <% } else { %>
+        <table class="table table-bordered text-center mt-3">
+            <thead class="table-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Contact Number</th>
+                    <th>Resume</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% allApplicants.forEach(jobSeeker => { %>
+                    <tr>
+                        <td><%= jobSeeker.name.toUpperCase() %></td>
+                        <td><%= jobSeeker.email %></td>
+                        <td><%= jobSeeker.contact %></td>
+                        <td>
+                         <button class="download">   <a href="<%= jobSeeker.resume %>" download="<%= jobSeeker.id %>-resume.pdf">Download</a>    </button>    
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } %>
+</div>

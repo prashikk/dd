@@ -1,0 +1,106 @@
+<div class="newOpening">
+    <h2>Update Job Post</h2>
+    <form action="/updateJob/<%= job.id %>" method="POST">
+      <div class="mb-3">
+        <div class="input-group mb-2">
+          <!-- this gives the role for the job -->
+          <select class="form-select" id="inputGroupSelect" name="role">
+            <option selected>Hiring for Role</option>
+            <option value="Tech">Tech</option>
+            <option value="Non-Tech">Non-Tech</option>
+          </select>
+        </div>
+      </div>
+      <div class="mb-3">
+        <div class="input-group mb-2">
+          <!-- this select element is used to select the designation of the job -->
+          <select class="form-select" id="inputGroupSelect01" name="designation">
+            <option selected>Choose...</option>
+            <option value="HR">HR</option>
+            <option value="SDE">SDE</option>
+            <option value="DevOps">DevOps</option>
+            <option value="MEAN Developer">MEAN Developer</option>
+            <option value="MEARN Developer">MEARN Developer</option>
+            <option value="JAVA Developer">JAVA Developer</option>
+            <option value="Front End Developer">Front End Developer</option>
+            <option value="Back End Developer">Back End Developer</option>
+            <option value="Full Stack Developer">Full Stack Developer</option>
+          </select>
+        </div>
+      </div>
+      <div class="input-group mb-3 opening">
+        <!-- this is for number of  job opening in that company -->
+        <label class="input-group-text" id="jobopeningLabel" for="jobopening">Job Opening</label>
+        <input
+          type="number"
+          class="form-control"
+          id="jobopening"
+          placeholder="number of openings"
+          min="1"
+          max="10"
+          name="jobopening"
+        />
+      </div>
+      <!-- this div is for filling salaray and job location inputs in one line  -->
+      <div class="combine">
+      <div class="mb-2">
+        <!-- this is for salary -->
+        <input
+          type="text"
+          class="form-control"
+          id="salary"
+          placeholder="Enter salary"
+          name="salary"
+        />
+      </div>
+      <div class="mb-2"  >
+        <!-- this input is for job location -->
+        <input
+          type="text"
+          class="form-control"
+          id="location"
+          placeholder="Enter Job Location"
+          name="location"
+          required
+        />
+      </div>
+      </div>
+      <!-- this div put company name and date and time in one line -->
+      <div class="group">
+      <div class="input-group mb-2">
+        <!-- this is for company name -->
+        <label class="input-group-text" id="companyLabel" for="company-name">Options</label>
+        <input
+          type="text"
+          class="form-control"
+          id="company-name"
+          placeholder="Enter company name"
+          name="companyName"
+        />
+      </div>
+       <!-- date and time  -->
+        <!-- <label for="dob">Posted:</label> -->
+       <input type="date" id="dob" name="dob" />
+        </div>
+  
+      <!-- overflow -->
+      <div class="overflow">Skills Required:</div>
+              <!-- Hidden Input Field js will update this field -->
+      <input type="hidden" id="selectedSkills" name="skills">
+      <!-- Skills List (Overflow Div) -->
+      <div class="border p-2 overflow-auto" style="max-height: 150px;">
+        <ul class="list-group" id="skillsList">
+            <% skillsList.forEach(skill => { %>
+                <li class="list-group-item skill"><%= skill %></li>
+            <% }); %>
+        </ul>
+    </div>
+    <!-- showing the selected skills  -->
+    <h5>Required Skills:</h5>
+  <div id="selectedSkillsContainer">
+   </div>
+  <!-- form submit button -->
+      <button type="submit" class="btn btn-primary">Update Job Details</button>
+    </form>
+  </div>
+  

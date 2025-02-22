@@ -1,0 +1,74 @@
+<h2 class="jobposting-header"><h2 class="jobposting-header">
+  <% if (searchQuery) { %>
+    Showing results for: "<%= searchQuery %>"
+  <% } else { %>
+    We are hiring...
+  <% } %>
+</h2>
+</h2>
+<% if (posts.length === 0) { %>
+  <% if (searchQuery) { %>
+    <p>No jobs found for "<%= searchQuery %>". Try searching something else!</p>
+  <% } else { %>
+    <p>No job postings available yet. Check back later!</p>
+  <% } %>
+<% } else { %>
+
+
+  <div class="new-container">
+    <% posts.forEach((job) => { %>
+      <div class="job-description">
+        <div class="hiringStatus">
+          <h3 style="color: rgb(109, 241, 109); font-weight: bold;">Actively Hiring</h3>
+          <i class="fa-solid fa-chart-line" style="color: #63e6be"></i>
+        </div>
+        <hr />
+        <div class="company-name">
+          <h3><%= job.companyName %></h3>
+          <p id="tech"><%= job.role %>: <%= job.designation %></p>
+        </div>
+        <hr />
+        <div class="location">
+          <i class="fa-solid fa-location-dot" style="color: #63e6be"></i>
+          <p><%= job.location %></p>
+        </div>
+        <div class="currency">
+          <i class="fa-solid fa-indian-rupee-sign" style="color: #63e6be"></i>
+          <p><%= job.salary %> LPA</p>
+        </div>
+        <div class="totalopening">
+          <i class="fa-solid fa-user" style="color: #63E6BE;"></i>
+          <p>Openings: <%= job.jobopening %></p>
+        </div>
+        <div class="date">
+          <i class="fa-solid fa-calendar-minus" style="color: #63E6BE;"></i>
+          <p><%= job.dob %></p>
+        </div>
+        
+        <div class="skills">
+          <div class="skillsType">
+            <i class="fa-solid fa-gears" style="color: #63d7e6"></i>
+            <p>Skills Required:</p>
+          </div>
+          <div class="requiredSkills">
+            <% if (job.skills && job.skills.length > 0) { %>
+              <% job.skills.forEach(skill => { %>
+                <div class="skillName"><%= skill %></div>
+              <% }); %>
+            <% } else { %>
+              <div class="skillName">No skills required</div>
+            <% } %>
+          </div>
+        </div>
+
+        <!--  More Details  -->
+        <div class="details">
+          <button type="button" id="details">
+            <a href="/jobDetails/<%= job.id %>">More Details</a>
+          </button>
+         </div>
+      </div> 
+    <% }); %>
+  </div>
+
+<% } %>

@@ -1,0 +1,410 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* background-color: cadetblue; */
+}
+header {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+nav {
+  background-color: rgb(245, 155, 21);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#logo {
+  width: 5rem;
+  margin-right: 2rem;
+  cursor: pointer;
+}
+.container {
+  display: flex;
+  align-items: center;
+  font-size: x-large;
+}
+.search {
+  display: flex;
+  margin-right: 2rem;
+}
+p {
+  margin: 0 1rem;
+  cursor: pointer;
+}
+#search {
+  margin-right: 1rem;
+  height: 2rem;
+  width: 14rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  outline: none;
+  border: none;
+}
+.search-btn {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.fa-solid {
+  cursor: pointer;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8rem;
+  background-image: url(/css/image/backgroung.jpeg);
+  background-size: contain;
+}
+.main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 25rem;
+  height: 17rem;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  background-color: rgb(173, 169, 169);
+  box-shadow: 5px 5px 5px 5px rgb(128, 128, 128);
+  padding: 1rem;
+}
+
+.btn {
+  width: 25rem;
+}
+.seeker,
+.recruiter {
+  width: 10rem;
+  height: 2rem;
+  background-color: aquamarine;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  /* border: none; */
+  font-size: large;
+  margin: 0 0.5rem;
+}
+/* here we starts adding the jobseeker page styling  */
+.jobposting-header {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.new-container {
+  display: flex;
+  width: 90%;
+  flex-wrap: wrap;
+  border: 5px solid black;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  background-color: darkcyan;
+}
+.job-description {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  height: 30%;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  background-color: rgb(245, 115, 40);
+  margin: 1rem;
+  justify-content: center;
+ }
+ .job-details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: darkcyan;
+
+}
+.job-description h1 {
+  margin-left: 2rem;
+}
+.hiringStatus {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.fa-chart-line {
+  font-size: x-large;
+}
+.company-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+}
+
+.location,
+.currency,
+.skillsType,.totalopening, .date,.applicants {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: large;
+  margin-left: 1rem;
+  margin-top: 0.3rem;
+}
+.skills {
+  display: flex;
+  flex-direction: column;
+  height: 12rem;
+}
+.requiredSkills {
+  height: 6rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.details {
+  display: flex;
+  justify-content: center;
+}
+#details {
+  width: 10rem;
+  margin-bottom: 0.8rem;
+  background-color: rgb(18, 69, 236);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  height: 1.8rem;
+  color: brown;
+  font-weight: bold;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+#details:hover {
+  transform: scale(1.1);
+  background-color: rgb(236, 18, 181);
+  color: white;
+}
+.skillName {
+  padding: 0.7rem;
+  background-color: rgb(52, 243, 179);
+  border-radius: 0.5rem;
+  height: 2.3rem;
+  margin: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+.skillName:hover {
+  background-color: rgb(107, 243, 17);
+  transform: scale(1.1);
+  color: aliceblue;
+}
+/* here we starts adding styling for recruiter registration page  */
+.form-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem 28rem;
+  background-color: gray;
+  width: 30rem;
+  height: 44rem;
+  border: 2px solid black;
+  border-radius: 1rem;
+}
+.form-control {
+  width: 25rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+}
+
+.login {
+  margin-top: 1rem;
+  width: 4rem;
+  border-radius: 0.5rem;
+  background-color: rgb(17, 243, 168);
+  transition: transform 0.3s ease-in-out;
+}
+.login:hover {
+  transform: scale(1.1);
+}
+#isAccount,
+#account {
+  margin-top: 1rem;
+}
+/* here we starts adding styling for recruiter login page  */
+.form-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 2rem 28rem;
+  background-color: gray;
+  width: 28rem;
+  height: 34rem;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+}
+/* here is styling for bootstrap button  */
+.btn-secondary {
+  width: 1rem;
+}
+.btn-danger {
+  width: 10rem;
+  margin: 0.5rem;
+}
+/* here is styling for card which shows when recruiter is logged in and clicks on home page  */
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 4rem 20rem;
+  background-color: rgb(149, 150, 148);
+  width: 28rem;
+  height: 20rem;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+.card:hover {
+  transform: translateY(-15px) scale(1.1) rotate3d(0, 0, 1, 360deg);
+}
+
+/* here styling for newPostJobs page where form for new Post jobs is created   */
+.newOpening {
+  border: 5px solid black;
+  width: 50.7rem;
+  height: 36.5rem;
+  text-align: center;
+  margin: .5rem 18rem;
+  border-radius: 1rem;
+  background-color: rgb(190, 183, 183);
+}
+#dob {
+  width: 16rem;
+  margin-top: .3rem;
+  margin-left: .7rem;
+  border-radius: 0.5rem;
+  height: 2.4rem;
+}
+.skill{
+  height: 2rem;
+  background-color: rgb(76, 247, 105);
+  color:rgb(0, 38, 255);
+  font-weight: bold;
+}
+.overflow{
+  font-size: larger;
+  font-weight: bolder;
+}
+.border{
+  height: 7rem;
+}
+/* heighlighting and bading in overflow in skill section */
+.skill.selected {
+  background-color: #f337c4 !important;
+  color: white !important;
+  /* font-weight: bold; */
+}
+
+.badge {
+  font-size: 14px;
+  border-radius: 5px;
+}
+.overflow-auto {
+  pointer-events: auto !important; 
+}
+.opeining{
+  width: 10rem;
+}
+.combine{
+display: flex;
+ }
+ .group{
+  display: flex;
+  width:49rem;
+  }
+  #location,#salary{
+    margin:0 1rem;
+    width: 23rem;
+  }
+  #jobopening{
+    margin-right: 1rem;
+  }
+  #jobopeningLabel,#companyLabel{
+    margin-left: 1rem;
+  }
+  .form-select{
+    margin: 0 1rem;
+  }
+  #selectedSkillsContainer{
+    height: 2.2rem;
+  }
+  .btn-primary{
+    margin: .4rem 5rem;
+    transition: transform .3s ease-in-out;
+    width: 15rem;
+  }
+  .btn-primary:hover{
+transform: scale(1.1);
+
+  }
+  #jobSeekerRegistration{
+    margin-bottom: 1rem;
+    border-radius: .5rem;
+    padding: .5rem;
+  }
+  .registrationForm{
+    border: 5px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30rem;
+    height: 35rem;
+    margin: 5rem auto;
+    border-radius: 1rem;
+    background-color: rgb(243, 98, 46);
+  }
+  #Registration{
+     text-align: center;
+     margin-bottom: 1rem;
+  }
+  
+  /* button in Registration successfull page */
+  .loginRoute{
+     margin-left: 40rem;
+     width: 10rem;
+     border-radius: .5rem;
+     background-color: rgb(17, 243, 168);
+     transition: transform .3s ease-in-out, background-color .3s ease-in-out;
+     height: 3rem;
+     border: none;
+     outline: none;
+     font-weight: bolder;
+  }
+  .loginRoute:hover{
+    transform: scale(1.1);
+    background-color: blue;
+  }
+  #numberOfPost{
+    color: yellow;
+    font-weight: bold;
+    font-size: larger;
+  }
+  .footer{
+    background-color: black;
+  }
+  .download{
+    border-radius: .5rem;
+    background-color: rgb(17, 243, 168);
+    transition: transform .3s ease-in-out;
+     padding:0 .5rem;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin-left: 1rem;
+  }
